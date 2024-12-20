@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style type="text/css" media="all">
+    @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+    html, body {
+      background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7NWn-rnqUkdMKnDYfV5U3x2pzRXs2H_3vwFyrEIzaA4OwBzTaNbU0BwelIhUaaFZcrjhhy5a6yCX1GpHs-u-zh470iYxqqshPO4s7o_Ashx0BB66uYMUfSTNQXFR7Mms7lPHGhK3jyGknnxWJ752TWbOFlcgvIIrB5GRXUxLXAysb-EJXgH4-_zSrL8I/s3464/Picsart_24-12-08_00-36-57-064.jpg');
+      background-size: 160px;
+      background-repeat: repeat;
+      background-attachment: fixed;
+      font-family: "Oswald", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      font-size: 16px;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      user-select: none;
+      /* Chrome */
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+    body {
+      color: rgba(0, 0, 0, .86);
+      font-family: 'Roboto', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .header{
+      display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 40px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px #545454;
+      border-bottom: 1px solid #fff;
+      font-size: 20px;
+    }
+.navbar{
+  position: fixed;
+  right: 0;
+  display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.header .logo{
+  margin-left: 12px;
+  color: #d00000;
+}
+.navbar .button1{
+  border: none;
+  background: none;
+  color: #111;
+  padding: 12px 10px;
+  margin: 8px;
+  font-size: 23px;
+}
+.navbar .search{
+  border: none;
+  background: none;
+  color: #111;
+  padding: 0;
+  margin-right: 1px;
+  font-size: 23px;
+}
+.navbar .camira{
+  border: none;
+  background: none;
+  color: #111;
+  padding: 0;
+  margin-right: 18px;
+  font-size: 23px;
+}
+    .category-bar{
+      margin-top: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      background: #5a5a5a00;
+    }
+
+    .category {
+      font-family: Arial, sans-serif;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #fff;
+      padding: 0;
+      width: 110px;
+      height: 120px;
+      margin: 10px;
+      font-size: 10px;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #000;
+      border: 2px solid #7d0a0a;
+      box-shadow: 0 4px 8px #240404;
+    }
+     .category img, .main img {
+      width: 80%;
+      height: 50px;
+      margin: 0;
+      padding: 8px;
+    }
+  </style>
+  <style>
+/* زر القائمة */
+.dropbtn {
+  position: fixed;
+  top: 5px;
+  right: 8px;
+  background: none;
+  color: #fff;
+  padding: 0;
+  font-size: 25px;
+  border: none;
+  z-index: 20;
+}
+
+/* الحاوية */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* القائمة الجانبية */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f1f1f1;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+    .dropdown-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .dropdown-content ul li {
+      position: relative;
+      top: -15px;
+      border-bottom: 1px solid #CC3300;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px #5a5a5ad7;
+    }
+    .dropdown-content ul li a {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 8px;
+      width: 100%;
+      text-decoration: none;
+      color: #CC3300;
+      font-size: 20px;
+    }
+    .dropdown-content ul li a i {
+      padding: 5px;
+      margin-left: 5px;
+      font-size: 20px;
+    }
+    .dropdown-content ul li a:hover {
+      background: #5a5a5ad7;
+      color: #fff;
+      width: 100%;
+    }
+.dropdown-content3 a:hover {
+  background-color: #ddd;
+}
+
+/* الخلفية (overlay) */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eb131300;
+  z-index: 1;
+}
+ul .logo{
+       position: relative;
+       top: -18px;
+       width: 100%;
+       margin: 0;
+       text-align: center;
+       padding: 16px 12px;
+       height: 120px;
+       background-color: #CC3300;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: #fff;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       font-size: 22px;
+       border-bottom: 1px solid #2b2b2b;
+     }
+</style>
+  </head>
+  <body>
+  <div class="header">
+    <div class="logo"><span style="font-size: 30px;color:#000000">F</span>ouad<span style="color:#1300c876; "><span style="font-size: 30px;color:#000000">B</span>hm</span></div>
+    <div class="navbar">
+  <div class="camira"><i class="fa-solid fa-tv"></i></div>
+  <div class="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+   <button class="button1" onclick="toggleMenu()" class="button1"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+  </div></div>
+  <div class="dropdown">
+  <div class="dropdown-content" id="dropdownMenu">
+ <ul>
+      <li class="logo"><h2>RAYAN TV</h2></li>
+      <li><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+      <li><a href="#"><i class="fa-solid fa-earth"></i>website</a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a></li>
+      <li><a href="#"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i>YouTube</a></li>
+      <li><a href="#"><i class="fab fa-tiktok"></i>TikTok</a></li>
+      <li><a href="#"><i class="fab fa-telegram"></i>Telegram</a></li>
+      <li><a href="http://action_share"><i class="fas fa-share-alt"></i>Share Apps</a></li>
+      <li><a href="http://action_search"><i class="fa-solid fa-envelope"></i>Contact</a></li>
+      <li><a href="http://action_exit"><i class="fa-solid fa-right-to-bracket"></i>Exit</a></li>
+   <li><a><div id="current-date-time" style="text-align:center; font-size:18px; color:#ff0000; margin:5px;"></div>الوقت البداية</a></li>
+    </ul>
+  </div>
+</div>
+    <div class="tv">
+  <div id="main-menu" class="active">
+<div class="category-bar">
+        <button class="category" onclick="openSection('bein', 'BEIN SD')"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/BeIN-Sports-Logo.svg"><p>BEIN SD</p></button>
+                        <button class="category" onclick="openSection('bein', 'BEIN HD')"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/BeIN-Sports-Logo.svg"><p>BEIN HD</p></button>
+        <button class="category" onclick="openSection('ssc', 'SSC')"><img src="https://alkhabarkw.com/wp-content/uploads/2024/10/1000068839.jpg"><p>SSC HD</p></button>
+        <button class="category" onclick="openSection('sports', 'sports')"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbY9RkDgMfskMLqVXE2DBhKaDSmC0BWM2Ti3mkqK74UPXc-5CORjE8pG25jhDSBRp7qLLtfkDamj3xIKuVJB6p7IBJFcOYkLjioTndhxAMYTAghBPAjNG0hcI5KLDPUPfNggSJMdMgUqiOx7Z80E9EbRNc1kHZJn8nOVhXXlMWt75jgk8S_YAtUa1jc9Q/s3464/Picsart_24-12-07_09-26-38-307.png" style="vertical-align: middle;"><p>SPORTS</p></button>
+ <button class="category" onclick="openSection('kids','KIDS')">
+  <p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEic57EY2De-rprXF2Tkf29mr85iiJoZn7bFxKSC0iaMf01yPZz7apRiQTKyS40ejePjh6hCemJFPiwdFG767O5Y14Uv7Re1yPODKh0eEfHaDP8laIhFfu-2j9JiDXeC54G7Y_efgsBU__x4yGgkKV70PtjMmf1z7pkiLQQGgvTGImKyBve7KdoV8E6EgmM/s3220/Picsart_24-12-07_09-13-51-696.png" alt="Kids" style="vertical-align: middle;"> KIDS</p>
+</button>
+
+<button class="category" onclick="openSection('documentary', 'DOCUMENTARY')">
+  <p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjDACT5fNXC9yRlrzq_pV8pQDi50HdlpMVe01EV-qPQFA8DZTjiNIUroAb0EO8a7vfPCqzGg3yJNT1fqI37roOVluPY4IcNIfPpv4TBOiACgoTdT9oRnP7AeWm6QjgNE72zjdxEj7eN1uPV7X8cHbM6V7ImzjHWdS9tSFzkgRaQmxDQ2QbgZ0B4UzWRKc/s4621/Picsart_24-12-06_11-04-42-815.png" alt="Documentary" style="vertical-align: middle;"> DOCU....</p>
+</button>
+
+<button class="category" onclick="openSection('mbc','MBC')">
+  <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGvFePeRnZFjxolBKb813l6J3pBBh-phoIpQ&s" alt="MBC" style=" vertical-align: middle;"> MBC</p>
+</button>
+
+<button class="category" onclick="openSection('news','NEWS')">
+  <p><img src="https://as1.ftcdn.net/v2/jpg/00/86/04/64/1000_F_86046478_rPox7JzkRkB5P5Ts9n6Qc1lcTyR4iOoQ.jpg" alt="News" style=" vertical-align: middle;"> NEWS</p>
+</button>
+
+<button class="category" onclick="openSection('islam', 'ISLAM')">
+  <p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrq4qmTij3iH-VDHLyhwFEeIbGUYqzn3IEGYoxqeC4vqKfyWDkGCbLyvw056AyXASPLLbcxt4azimga08_xKNitAl6knnYgcDOWD0UFvvGjB5Tf0RhFfb2_Qm4oxHr7_qWJX5mFnbcnEMFOFsTcLECYPmX7FKD6PGoxuAn3PtL607ricRIqE3zwy4qpNI/s1807/Picsart_24-12-06_12-06-18-549.jpg" alt="Islam" style=" vertical-align: middle;"> ISLAM</p>
+</button>
+
+<button class="category" onclick="openSection('osn', 'OSN')">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/OSN_2020_logo.svg/1280px-OSN_2020_logo.svg.png" alt="OSN" style="vertical-align: middle;"> OSN</p>
+</button>
+
+<button class="category" onclick="openSection('rotana', 'ROTANA')">
+  <p><img src="https://play-lh.googleusercontent.com/ETz89iZ47jOI_T62QFEqKYP0fr6Y-NylpNTCAToveLB80F9DZ6KWzg4NgEss8qoIV_oF" alt="Rotana TV" style="vertical-align: middle;"> ROTANA</p>
+</button>               
+        <button class="category" onclick="openSection('maroc', 'MAROC')"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Flag_of_Morocco_hexagram.svg"><p>MAROC</p></button>
+      <button class="category" onclick="openSection('spain')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Spain Flag">
+        <p>SPAIN</p>
+    </button>
+
+    <button class="category" onclick="openSection('france')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="France Flag">
+        <p>FRANCE</p>
+    </button>
+
+    <button class="category" onclick="openSection('germany')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Germany Flag">
+        <p>GERMANY</p>
+    </button>
+
+    <button class="category" onclick="openSection('italy')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="Italy Flag">
+        <p>ITALY</p>
+    </button>
+
+    <button class="category" onclick="openSection('uk')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="United Kingdom Flag">
+        <p>UNITED KIN...</p>
+    </button>
+<button class="category" onclick="openSection('portugal')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portugal Flag">
+    <p>PORTUGAL</p>
+</button>
+<button class="category" onclick="openSection('belgium')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg" alt="Belgium Flag">
+    <p>BELGIUM</p>
+</button>
+    <button class="category" onclick="openSection('netherlands')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" alt="Netherlands Flag">
+        <p>NETHERLANDS</p>
+    </button>
+
+    <button class="category" onclick="openSection('sweden')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg" alt="Sweden Flag">
+        <p>SWEDEN</p>
+    </button>
+
+    <button class="category" onclick="openSection('poland')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" alt="Poland Flag">
+        <p>POLAND</p>
+    </button>
+
+    <button class="category" onclick="openSection('norway')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norway Flag">
+        <p>NORWAY</p>
+    </button>
+
+    <button class="category" onclick="openSection('egypt')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="علم مصر">
+        <p>egypt</p>
+    </button>
+<button class="category" onclick="openSection('tunisia')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg" alt="Tunisia Flag">
+    <p>TUNISIA</p>
+</button>
+    <button class="category" onclick="openSection('saudi')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="علم السعودية">
+        <p>saudi</p>
+    </button>
+
+    <button class="category" onclick="openSection('uae')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg" alt="علم الإمارات">
+        <p>uae</p>
+    </button>
+
+    <button class="category" onclick="openSection('algeria')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg" alt="علم الجزائر">
+        <p>algeria</p>
+    </button>
+
+    <button class="category" onclick="openSection('iraq')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg" alt="علم العراق">
+        <p>iraq</p>
+    </button>
+
+    <button class="category" onclick="openSection('jordan')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg" alt="علم الأردن">
+        <p>jordan</p>
+    </button>
+    <!-- North America -->
+    <button class="category" onclick="openSection('usa')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA Flag">
+        <p>UNITED...</p>
+    </button>
+
+    <button class="category" onclick="openSection('canada')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canada Flag">
+        <p>CANADA</p>
+    </button>
+
+    <button class="category" onclick="openSection('mexico')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg" alt="Mexico Flag">
+        <p>MEXICO</p>
+    </button>
+
+    <!-- Latin America -->
+    <button class="category" onclick="openSection('brazil')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg" alt="Brazil Flag">
+        <p>BRAZIL</p>
+    </button>
+
+    <button class="category" onclick="openSection('argentina')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina Flag">
+        <p>ARGENTINA</p>
+    </button>
+
+    <button class="category" onclick="openSection('colombia')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg" alt="Colombia Flag">
+        <p>COLOMBIA</p>
+    </button>
+
+    <button class="category" onclick="openSection('chile')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg" alt="Chile Flag">
+        <p>CHILE</p>
+    </button>
+
+    <button class="category" onclick="openSection('peru')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg" alt="Peru Flag">
+        <p>PERU</p>
+    </button>
+    <!-- يمكنك إضافة بقية الدول بنفس الطريقة -->
+
+    </div>
+    <!-- Add other categories here -->
+  </div></div>
+  <div id="overlay" onclick="closeMenu()"></div>
+  <script>
+  // دالة لتبديل ظهور القائمة والخلفية
+  function toggleMenu() {
+    const dropdown = document.getElementById('dropdownMenu');
+    const overlay = document.getElementById('overlay');
+    const isVisible = dropdown.style.display === 'block';
+
+    dropdown.style.display = isVisible ? 'none' : 'block';
+    overlay.style.display = isVisible ? 'none' : 'block';
+  }
+
+  // دالة لإغلاق القائمة والخلفية
+  function closeMenu() {
+    document.getElementById('dropdownMenu').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+  </body>
+</html>
